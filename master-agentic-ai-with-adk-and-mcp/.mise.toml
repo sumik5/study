@@ -1,0 +1,18 @@
+[tools]
+python = "3.13"
+uv = "latest"
+
+[env]
+UV_CACHE_DIR = ".uv-cache"
+_.python.venv = { path = ".venv", python = "python3.13" , create = true }
+
+[settings]
+experimental = true
+
+[tasks.activate]
+description = "Activate Virtual Environment"
+run = "source .venv/bin/activate"
+
+[tasks.setup]
+description = "Install Requirements"
+run = "uv add -r requirements.txt"
